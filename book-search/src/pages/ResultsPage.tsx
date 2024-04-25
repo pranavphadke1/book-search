@@ -61,16 +61,14 @@ function ResultsPage() {
 
       <Container className="d-flex flex-column justify-content-center align-items-center ">
         {!loading ? (
-          sortBy === "Relevancy" ? (
-            searchResults.length === 0 ? (
-              <Row className="d-flex mt-3 justify-content-center">
-                <Col>Search a book!</Col>
-              </Row>
-            ) : (
-              searchResults.map((result, index) => (
-                <Result key={index} book={result} />
-              ))
-            )
+          searchResults.length === 0 || searchResultsByYear.length === 0 ? (
+            <Row className="d-flex mt-3 justify-content-center">
+              <Col>Search a book!</Col>
+            </Row>
+          ) : sortBy === "Relevancy" ? (
+            searchResults.map((result, index) => (
+              <Result key={index} book={result} />
+            ))
           ) : (
             searchResultsByYear.map((result, index) => (
               <Result key={index} book={result} />

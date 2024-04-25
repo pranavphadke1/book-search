@@ -7,12 +7,12 @@ interface ResultProps {
 
 function Result({ book }: ResultProps) {
   return (
-    <Row className="d-flex mt-3 justify-content-center w-100 rounded border">
+    <Row className="d-flex mt-3 p-2 justify-content-center w-100 rounded border">
       <Col>
         <h2>{book.title}</h2>
         <p>
           <strong>Author(s): </strong>
-          {book.author_name}
+          {book.author_name?.join(", ")}
         </p>
         <p>
           <strong>Year Published: </strong>
