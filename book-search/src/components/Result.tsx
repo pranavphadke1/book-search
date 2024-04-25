@@ -20,7 +20,7 @@ function Result({ book }: ResultProps) {
         </p>
         <p>
           <strong>ISBN: </strong>
-          {book.isbn?.join(", ")}
+          {book.isbn?.[0]}
         </p>
         <p>
           <strong>Number of Pages: </strong>
